@@ -1,0 +1,6 @@
+entity.myroute_noindex.add_form:
+  route_name: 'entity.myroute_noindex.add_form'
+  title: 'Add MyrouteNoindex'
+  appears_on:
+    - entity.myroute_noindex.collection
+

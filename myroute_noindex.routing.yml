@@ -1,0 +1,88 @@
+# Entity
+entity.myroute_noindex.collection:
+  path: '/admin/seo/myroute_noindex/list'
+  defaults:
+    _entity_list: 'myroute_noindex'
+    _title: 'MyrouteNoindex'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.myroute_noindex.add_form:
+  path: '/admin/seo/myroute_noindex/list/add'
+  defaults:
+    _entity_form: 'myroute_noindex.add'
+    _title: 'Add MyrouteNoindex'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.myroute_noindex.edit_form:
+  path: '/admin/seo/myroute_noindex/list/{myroute_noindex}'
+  defaults:
+    _entity_form: 'myroute_noindex.edit'
+    _title: 'Edit MyrouteNoindex'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.myroute_noindex.delete_form:
+  path: '/admin/seo/myroute_noindex/list/{myroute_noindex}/delete'
+  defaults:
+    _entity_form: 'myroute_noindex.delete'
+    _title: 'Delete MyrouteNoindex'
+  requirements:
+    _permission: 'administer site configuration'
+    
+
+
+# Autocomplete
+myroute_noindex.router_autocomplete:
+  path: '/admin/seo/myroute_noindex/router-autocomplete'
+  defaults:
+    _title: 'Router autocomplete'
+    _controller: '\Drupal\myroute_noindex\Controller\MyrouteNoindexAutocomplete::getRouterAutocomplete'
+  requirements:
+    _permission: 'access content'
+
+
+
+# Conditions
+myroute_noindex.condition_select:
+  path: '/admin/seo/myroute_noindex/list/{myroute_noindex}/condition/select'
+  defaults:
+    _controller: '\Drupal\myroute_noindex\Controller\MyrouteNoindexConditionController::selectCondition'
+    _title: 'Select condition'
+  requirements:
+    _permission: 'administer site configuration'
+
+myroute_noindex.condition_add:
+  path: '/admin/seo/myroute_noindex/list/{myroute_noindex}/condition/add/{condition_id}'
+  defaults:
+    _form: '\Drupal\myroute_noindex\Form\ConditionAddForm'
+    _title: 'Add new condition'
+  requirements:
+    _permission: 'administer site configuration'
+
+myroute_noindex.condition_edit:
+  path: '/admin/seo/myroute_noindex/list/{myroute_noindex}/condition/edit/{condition_id}'
+  defaults:
+    _form: '\Drupal\myroute_noindex\Form\ConditionEditForm'
+    _title: 'Edit Condition'
+  requirements:
+    _permission: 'administer site configuration'
+
+myroute_noindex.condition_delete:
+  path: '/admin/seo/myroute_noindex/list/{myroute_noindex}/condition/delete/{condition_id}'
+  defaults:
+    _form: '\Drupal\myroute_noindex\Form\ConditionDeleteForm'
+    _title: 'Delete condition'
+  requirements:
+    _permission: 'administer site configuration'
+    
+    
+
+
+
+
+
+
+
+

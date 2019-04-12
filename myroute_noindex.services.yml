@@ -1,0 +1,9 @@
+services:
+  myroute_noindex.myroute_noindex_evaluator:
+    class: Drupal\myroute_noindex\MyrouteNoindexEvaluator
+    arguments: ['@context.handler', '@context.repository', '@entity_type.manager']
+
+
+ 
+
+
