@@ -23,7 +23,7 @@ class MyrouteNoindexListBuilder extends DraggableListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader() {
-    $header['label'] = $this->t('MyrouteNoindex');
+    $header['label'] = 'Шаблоны';
     $header['weight'] = t('Weight');
     $header += parent::buildHeader();
     return $header;
@@ -36,6 +36,18 @@ class MyrouteNoindexListBuilder extends DraggableListBuilder {
     $row['label'] = $entity->label();
     $row += parent::buildRow($entity);
     return $row;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function render() {
+    $build = parent::render();
+    $build['help'] = [
+      '#markup' => '<p>Первый шаблон из списка для которого все условия будут выполнены - будет использован.</p>',
+      '#weight' => -10,
+    ];
+    return $build;
   }
 
 }

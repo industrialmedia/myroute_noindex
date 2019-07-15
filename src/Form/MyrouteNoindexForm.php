@@ -56,6 +56,17 @@ class MyrouteNoindexForm extends EntityForm implements ContainerInjectionInterfa
     $form = parent::form($form, $form_state);
     /** @var \Drupal\myroute_noindex\Entity\MyrouteNoindex $myroute_noindex */
     $myroute_noindex = $this->entity;
+    $form['help'] = [
+      '#markup' => '
+        <ul>
+          <li><strong>Укажите типы страниц для каких сработает шаблон:</strong><br />
+          <em>роут</em> - один из зарегистрированных на сайте (нода, термин, товар, ...)<br /> 
+          <em>условия</em> - для фильтрации страниц, любые доступные на сайте (словарь таксономии, тип ноды, текущая тема, ...). Если в списке нет - его нужно написать наследуя класс ConditionPluginBase</li>
+          <li><strong>Заполните значение метатега robots:</strong><br />
+          <em>noindex, follow</em> или <em>noindex, nofollow</em></li>
+        </ul>',
+      '#weight' => -10,
+    ];
     $form['label'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Label'),
@@ -167,6 +178,7 @@ class MyrouteNoindexForm extends EntityForm implements ContainerInjectionInterfa
         '#empty' => $this->t('There are no conditions.'),
       ];
       foreach ($conditions as $condition_id => $condition) {
+        /* @var \Drupal\Core\Condition\ConditionPluginBase $condition */
         $row = [];
         $row['label']['#markup'] = $condition->getPluginDefinition()['label'];
         $row['description']['#markup'] = $condition->summary();

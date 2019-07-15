@@ -3,7 +3,7 @@ entity.myroute_noindex.collection:
   path: '/admin/seo/myroute_noindex/list'
   defaults:
     _entity_list: 'myroute_noindex'
-    _title: 'MyrouteNoindex'
+    _title: 'Noindex, nofollow'
   requirements:
     _permission: 'administer site configuration'
 
@@ -11,7 +11,7 @@ entity.myroute_noindex.add_form:
   path: '/admin/seo/myroute_noindex/list/add'
   defaults:
     _entity_form: 'myroute_noindex.add'
-    _title: 'Add MyrouteNoindex'
+    _title: 'Добавить шаблон Noindex, nofollow'
   requirements:
     _permission: 'administer site configuration'
 
@@ -19,7 +19,7 @@ entity.myroute_noindex.edit_form:
   path: '/admin/seo/myroute_noindex/list/{myroute_noindex}'
   defaults:
     _entity_form: 'myroute_noindex.edit'
-    _title: 'Edit MyrouteNoindex'
+    _title: 'Редактировать шаблон Noindex, nofollow'
   requirements:
     _permission: 'administer site configuration'
 
@@ -27,7 +27,7 @@ entity.myroute_noindex.delete_form:
   path: '/admin/seo/myroute_noindex/list/{myroute_noindex}/delete'
   defaults:
     _entity_form: 'myroute_noindex.delete'
-    _title: 'Delete MyrouteNoindex'
+    _title: 'Удалить шаблон Noindex, nofollow'
   requirements:
     _permission: 'administer site configuration'
     

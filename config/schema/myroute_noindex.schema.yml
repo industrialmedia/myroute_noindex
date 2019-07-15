@@ -1,0 +1,34 @@
+myroute_noindex.myroute_noindex.*:
+  type: config_entity
+  label: 'My route noindex entity'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    route_name:
+      type: string
+      label: 'Route name'
+    weight:
+      type: integer
+      label: 'Weight'
+    items:
+      type: mapping
+      label: 'Items'
+      mapping:
+        noindex_type:
+          type: string
+          label: 'Noindex type'
+    conditions:
+      type: sequence
+      label: 'Conditions'
+      sequence:
+        type: condition.plugin.[id]
+        label: 'Condition'
+    logic:
+      type: string
+      label: 'Conditions logic'
+
+
