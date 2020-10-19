@@ -2,7 +2,7 @@ entity.myroute_noindex.collection:
   title: 'Noindex, nofollow'
   description: 'Список Noindex, follow; noindex, nofollow по шаблону'
   route_name: entity.myroute_noindex.collection
-  parent: myapi.seo
+  parent: myseo
   weight: 11
 
 
