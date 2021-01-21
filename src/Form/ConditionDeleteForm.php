@@ -80,7 +80,7 @@ class ConditionDeleteForm extends ConfirmFormBase implements ContainerInjectionI
    * {@inheritdoc}
    */
   public function getCancelUrl() {
-    return $this->myroute_noindex->urlInfo('edit-form');
+    return $this->myroute_noindex->toUrl('edit-form');
   }
 
   /**
